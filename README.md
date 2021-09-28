@@ -39,8 +39,8 @@
 ## 5. How to use the applicaiton
 1. You can check if the application is running by running the command `docker ps`.
 2. By this time everything should be up and running, and you can now use the application with the following endpoints:
-    1. http://localhost:8080/calc/history - This will return a list of the performed operations.
-    2. http://localhost:8080/calc/{operation}/{firstValue}/{secondValue}
+    1. http://localhost:8090/calc/history - This will return a list of the performed operations.
+    2. http://localhost:8090/calc/{operation}/{firstValue}/{secondValue}
        1. Available operations: `sum, sub, mul, div`.
 3. If you want to stop the container, run the following commands.
    1. Run `docker ps` and copy the container id.
