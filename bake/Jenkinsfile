@@ -1,0 +1,13 @@
+pipeline {
+
+    agent any
+
+    stages {
+
+        stage('Packer build') {
+            steps {
+                sh 'packer build "bake/packerConfig.json"'
+            }
+        }
+    }
+}

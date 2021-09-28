@@ -1,0 +1,44 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "golang:1.17.1",
+      "commit": true,
+      "changes": [
+        "EXPOSE 8080",
+        "ENTRYPOINT $HOME/application/calculator"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "apt-get update"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "application",
+      "destination": "/tmp"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "cp -r /tmp/application $HOME",
+        "chmod +x $HOME/application/startup.sh",
+        "cd $HOME/application",
+        "$HOME/application/startup.sh buildApplication"
+      ]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "calculator-app",
+        "tag": "1.0"
+      }
+    ]
+  ]
+}

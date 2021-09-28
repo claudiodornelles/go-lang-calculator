@@ -1,0 +1,12 @@
+pipeline {
+
+   agent any
+
+   stages {
+      stage('Run Docker image') {
+         steps {
+            sh 'docker run --name calculator --network host -d calculator-app:1.0'
+         }
+      }
+   }
+}
