@@ -19,7 +19,7 @@
     },
     {
       "type": "file",
-      "source": "../application",
+      "source": "application",
       "destination": "/tmp"
     },
     {
