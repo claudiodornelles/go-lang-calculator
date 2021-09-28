@@ -110,7 +110,7 @@ func main() {
 	router := gin.Default()
 	router.GET("/calc/history", getHistory)
 	router.GET("/calc/:operation/:firstValue/:secondValue", calculate)
-	err := router.Run("0.0.0.0:8080")
+	err := router.Run("0.0.0.0:8090")
 	if err != nil {
 		logger.Println(err.Error())
 		return

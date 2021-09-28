@@ -5,7 +5,7 @@
       "image": "golang:1.17.1",
       "commit": true,
       "changes": [
-        "EXPOSE 8080",
+        "EXPOSE 8090",
         "ENTRYPOINT $HOME/application/calculator"
       ]
     }
