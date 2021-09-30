@@ -7,6 +7,7 @@
       "changes": [
         "ENV ANSIBLE_INVENTORY $HOME/ansible_hosts",
         "EXPOSE 8090",
+        "EXPOSE 5672",
         "CMD $HOME/application/startup.sh collectd",
         "ENTRYPOINT $HOME/application/calculator"
       ]
@@ -42,9 +43,9 @@
   "post-processors": [
     [
       {
-        "type": "docker-tag",
+        "type": "docker-tags",
         "repository": "calculator-app",
-        "tag": "1.0"
+        "tags": "1.0"
       }
     ]
   ]
