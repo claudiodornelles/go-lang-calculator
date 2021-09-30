@@ -4,12 +4,17 @@
   apt:
     update_cache: yes
 
-- name: apt-get install collectd
+- name: Install python3-apt
+  become: true
+  apt:
+    name: python3-apt
+
+- name: Install collectd
   become: true
   apt:
     name: collectd
 
-- name: apt-get install collectd
+- name: Install collectd-utils
   become: true
   apt:
     name: collectd-utils
