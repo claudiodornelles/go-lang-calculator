@@ -1,5 +1,5 @@
 # How to deploy this application
-## 1. Required softwares
+## 1. Required software
 1. Download Jenkins from (the official website)[https://www.jenkins.io/download/].
 2. In order to run this application it's mandatory to have a Java runtime environment installed in your computer. You can have more information on that (here)[https://www.jenkins.io/doc/administration/requirements/java/].
 3. Download and install Packer from (the official website)[https://learn.hashicorp.com/tutorials/packer/get-started-install-cli].
@@ -20,23 +20,25 @@
 4. Select the tab `Advanced Project Options` and change the Pipeline Definition from `Pipeline script` to `Pipeline script from SCM`.
 5. Select `Git` for the `SCM`.
 6. Add the repository URL `https://github.com/claudiodornelles/go-lang-calculator.git`.
-7. Scroll down to the bottom of the page and change the field `Script Path` from `Jenkinsfile` to `bake/Jenkinsfile`.
-8. Click save.
+7. Change the default branch name from `*/master` to `*/v1.0-tema-15`.
+8. Scroll down to the bottom of the page and change the field `Script Path` from `Jenkinsfile` to `bake/Jenkinsfile`.
+9. Click save.
 ### 2. Job 2 - Launch
 1. Get back to Jenkins dashboard and repeat the steps from Job 1.
-	1. Click `New Item` on the left-hand menu.
-	2. Enter the item name as `launch` and select `Pipeline` option.
-	3. Click `OK` to create the job.
-	4. Select the tab `Advanced Project Options` and change the Pipeline Definition from `Pipeline script` to `Pipeline script from SCM`.
-	5. Select `Git` for the `SCM`.
-	6. Add the repository URL `https://github.com/claudiodornelles/go-lang-calculator.git`.
-	7. Scroll down to the bottom of the page and change the field `Script Path` from `Jenkinsfile` to `launch/Jenkinsfile`.
-	8. Click save.
+    1. Click `New Item` on the left-hand menu.
+    2. Enter the item name as `launch` and select `Pipeline` option.
+    3. Click `OK` to create the job.
+    4. Select the tab `Advanced Project Options` and change the Pipeline Definition from `Pipeline script` to `Pipeline script from SCM`.
+    5. Select `Git` for the `SCM`.
+    6. Add the repository URL `https://github.com/claudiodornelles/go-lang-calculator.git`.
+    7. Change the default branch name from `*/master` to `*/v1.0-tema-15`.
+    8. Scroll down to the bottom of the page and change the field `Script Path` from `Jenkinsfile` to `launch/Jenkinsfile`.
+    9. Click save.
 ## 4. Deploy application
 1. After creating jobs 1 and 2, you should be able to see them at the main page of Jenkins dashboard.
 2. Click at the clock icon on the right-hand side of the screen that corresponds to the `bake` job we have created earlier.
 3. After `bake` job build is completed, click at the clock icon on the right-hand side of the screen that corresponds to the `launch` job we have created earlier. This job will launch the Docker container at http://localhost:8080
-## 5. How to use the applicaiton
+## 5. How to use the application
 1. You can check if the application is running by running the command `docker ps`.
 2. By this time everything should be up and running, and you can now use the application with the following endpoints:
     1. http://localhost:8090/calc/history - This will return a list of the performed operations.

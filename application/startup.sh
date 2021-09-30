@@ -1,5 +1,11 @@
-start() {
-  nohup ./calculator &
+ansible() {
+  ansible-playbook calculator.yml -i \$HOME/ansible_hosts
+}
+
+collectd() {
+  sudo systemctl enable collectd
+  sudo systemctl start collectd
+  sudo systemctl status collectd
 }
 
 buildApplication() {

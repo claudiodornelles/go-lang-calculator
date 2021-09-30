@@ -5,6 +5,7 @@
       "image": "golang:1.17.1",
       "commit": true,
       "changes": [
+        "ENV ANSIBLE_INVENTORY $HOME/ansible_hosts",
         "EXPOSE 8090",
         "ENTRYPOINT $HOME/application/calculator"
       ]
@@ -14,7 +15,11 @@
     {
       "type": "shell",
       "inline": [
-        "apt-get update"
+        "apt-get update",
+        "apt-get -y install ansible",
+        "sh -c 'touch $HOME/ansible_hosts'",
+        "sh -c 'echo \"[localhost]\" > $HOME/ansible_hosts'",
+        "sh -c 'echo \"localhost ansible_connection=local\" >> $HOME/ansible_hosts'"
       ]
     },
     {
@@ -26,8 +31,10 @@
       "type": "shell",
       "inline": [
         "cp -r /tmp/application $HOME",
-        "chmod +x $HOME/application/startup.sh",
+        "chmod +x $HOME/application/*.sh",
         "cd $HOME/application",
+        "$HOME/application/startup.sh ansible",
+        "$HOME/application/startup.sh collectd",
         "$HOME/application/startup.sh buildApplication"
       ]
     }

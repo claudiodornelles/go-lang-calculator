@@ -1,0 +1,5 @@
+---
+- name: Provision collectD
+  hosts: all
+  roles:
+    - collectD
