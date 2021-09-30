@@ -43,7 +43,7 @@
   "post-processors": [
     [
       {
-        "type": "docker-tags",
+        "type": "docker-tag",
         "repository": "calculator-app",
         "tags": "1.0"
       }
