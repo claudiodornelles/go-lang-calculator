@@ -3,9 +3,9 @@ ansible() {
 }
 
 collectd() {
-  sudo systemctl enable collectd
-  sudo systemctl start collectd
-  sudo systemctl status collectd
+  systemctl enable collectd
+  systemctl start collectd
+  systemctl status collectd
 }
 
 buildApplication() {
