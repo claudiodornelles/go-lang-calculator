@@ -1,0 +1,14 @@
+.gradle/
+/build/
+.idea/
+.vagrant/
+
+*.class
+*.log
+*.html
+*.bin
+*.css
+*.js
+*.idx
+*.jar
+*.out
