@@ -1,13 +1,13 @@
 package main
 
 import (
+	"errors"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
 	"strings"
-	"errors"
 )
 
 var logger = log.New(os.Stdout, "", log.Ldate|log.Lmicroseconds|log.Lshortfile)
@@ -106,10 +106,15 @@ func div(firstValue float64, secondValue float64) (operation, error) {
 	}
 }
 
+func health(context *gin.Context) {
+	context.IndentedJSON(http.StatusOK, gin.H{"status": "up"})
+}
+
 func main() {
 	router := gin.Default()
 	router.GET("/calc/history", getHistory)
 	router.GET("/calc/:operation/:firstValue/:secondValue", calculate)
+	router.GET("/health", health)
 	err := router.Run("0.0.0.0:8090")
 	if err != nil {
 		logger.Println(err.Error())
