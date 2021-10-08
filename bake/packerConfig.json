@@ -26,9 +26,9 @@
       "type": "shell",
       "inline": [
         "cp -r /tmp/application $HOME",
-        "chmod +x $HOME/application/startup.sh",
+        "chmod +x $HOME/application/build.sh",
         "cd $HOME/application",
-        "$HOME/application/startup.sh buildApplication"
+        "$HOME/application/build.sh"
       ]
     }
   ],
