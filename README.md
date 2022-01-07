@@ -1,9 +1,8 @@
 # How to deploy this application
 ## 1. Required softwares
 1. Download Jenkins from (the official website)[https://www.jenkins.io/download/].
-2. In order to run this application it's mandatory to have a Java runtime environment installed in your computer. You can have more information on that (here)[https://www.jenkins.io/doc/administration/requirements/java/].
-3. Download and install Packer from (the official website)[https://learn.hashicorp.com/tutorials/packer/get-started-install-cli].
-4. Download and install Docker from (the official website)[https://docs.docker.com/engine/install/].
+2. Download and install Packer from (the official website)[https://learn.hashicorp.com/tutorials/packer/get-started-install-cli].
+3. Download and install Docker from (the official website)[https://docs.docker.com/engine/install/].
 ## 2. Jenkins configuration
 1. After installing Jenkins, access the URL http://localhost:8080 to access its dashboard.
 	1. If any problem occurs, and you do not have access to Jenkins dashboard, you can check if it is running by typing the following command in a terminal window `service jenkins status`
